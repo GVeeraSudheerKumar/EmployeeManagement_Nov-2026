@@ -1,0 +1,124 @@
+http://localhost:4004/odata/v4/EmployeeService
+
+###Service metadata document
+http://localhost:4004/odata/v4/EmployeeService/$metadata
+
+###Get all the Deparments data
+http://localhost:4004/odata/v4/EmployeeService/Departments
+
+###Get all the Employees data
+http://localhost:4004/odata/v4/EmployeeService/Employees
+
+###Get all the LeaveRequests data
+http://localhost:4004/odata/v4/EmployeeService/LeaveRequests
+
+###Get all employeedetails data
+http://localhost:4004/odata/v4/EmployeeService/EmployeeDetails
+
+###Get all employeeLeavedetails data
+http://localhost:4004/odata/v4/EmployeeService/EmployeeLeaveDetails
+
+###Get all departmentsummary data
+http://localhost:4004/odata/v4/EmployeeService/DepartmentSummary
+
+###Get single employee record by ID
+http://localhost:4004/odata/v4/EmployeeService/Employees/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+
+###Get employee recording using columns
+http://localhost:4004/odata/v4/EmployeeService/Employees?$select=FirstName,LastName,FullName,Email,Phone
+
+###Get Department records using coloumns
+http://localhost:4004/odata/v4/EmployeeService/Departments?$select=DepartmentName,ManagerName
+
+###Get Employee records using filters
+http://localhost:4004/odata/v4/EmployeeService/Employees?$filter=Status eq 'active'
+
+###Get employee recording using pattern match
+http://localhost:4004/odata/v4/EmployeeService/Employees?$filter=contains(FirstName, 'Ra')
+
+###Get employee records count
+http://localhost:4004/odata/v4/EmployeeService/Employees/$count
+
+###Get employee top 2 records
+http://localhost:4004/odata/v4/EmployeeService/Employees?$top=2
+
+###Get employee skip 2 records
+http://localhost:4004/odata/v4/EmployeeService/Employees?$skip=2&top=2
+
+###Get employee records using expand with Department
+http://localhost:4004/odata/v4/EmployeeService/Employees?$expand=Department
+
+###Get employee records using expand with LeaveRequest
+http://localhost:4004/odata/v4/EmployeeService/Employees?$expand=LeaveRequests
+
+###POST employee record to employees
+POST  http://localhost:4004/odata/v4/EmployeeService/Employees
+Content-Type: application/json
+
+{
+      "HouseNo": "20-A",
+      "Landmark": "Near PVR Cinemas",
+      "Area": "ESI",
+      "City": "Ongole",
+      "Country": "BN",
+      "EmployeeNo": "E10011",
+      "FirstName": "ABHISHEK",
+      "LastName": "sHARMA",
+      "FullName": "ABIShek SharmA",
+      "Email": " Abishek.Sharma@company.com ",
+      "Phone": "3377225533",
+      "JoiningDate": "2024-09-25",
+      "Salary": "60000"
+      
+}
+
+###PUT - updating the employee record
+PUT http://localhost:4004/odata/v4/EmployeeService/Employees/4b9055df-5009-4166-837b-10c57d4889d7
+Content-Type: application/json
+
+{
+      "EmployeeNo": "E10034"
+}
+
+###DELETE - deleting the employee record
+DELETE http://localhost:4004/odata/v4/EmployeeService/Employees/32075f35-2c16-4ab0-b511-f5357bd83be7
+
+###POST Leave Request record
+POST  http://localhost:4004/odata/v4/EmployeeService/LeaveRequests
+Content-Type: application/json
+
+{
+      "LeaveID": "L15000",
+      "FromDate": "2026-11-03",
+      "ToDate": "2026-11-05",
+      "Reason": "Event",
+      "Employee_ID": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"     
+}
+
+###Testing the test action on Employee 
+POST http://localhost:4004/odata/v4/EmployeeService/Employees/2a87df14-dee9-480a-bc33-eb613bccd7ce/test
+Content-Type: application/json
+
+{}
+
+###ApproveLeave action on LeaveRequests
+POST http://localhost:4004/odata/v4/EmployeeService/LeaveRequests/e3cb4739-1423-42ae-92b9-a698cad18b15/ApproveLeave
+Content-Type: application/json
+
+{}
+
+###Get LeaveRequets record by ID
+http://localhost:4004/odata/v4/EmployeeService/LeaveRequests/e3cb4739-1423-42ae-92b9-a698cad18b15
+
+###RejectLeave 
+POST http://localhost:4004/odata/v4/EmployeeService/LeaveRequests/e3cb4739-1423-42ae-92b9-a698cad18b15/Reject
+Content-Type: application/json
+
+{
+      "reason" : "Insufficent Leave Balance"
+}
+
+###Test Internalization 
+GET http://localhost:4004/odata/v4/EmployeeService/$metadata
+Accept-Language: hi
+

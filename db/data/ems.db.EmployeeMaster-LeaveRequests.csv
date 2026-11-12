@@ -1,0 +1,5 @@
+ID,LeaveID,FromDate,ToDate,Reason,Status,Employee_ID
+90000000-0000-0000-0000-000000000001,L1000,2025-07-01,2025-07-05,Vacation,Approved,aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+90000000-0000-0000-0000-000000000002,L2000,2025-07-10,2025-07-12,Medical Leave,Pending,cccccccc-cccc-cccc-cccc-cccccccccccc
+90000000-0000-0000-0000-000000000003,L3000,2025-08-15,2025-08-20,Family Function,Approved,eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee
+90000000-0000-0000-0000-000000000004,L4000,2025-09-01,2025-09-03,Personal Work,Rejected,ffffffff-ffff-ffff-ffff-ffffffffffff

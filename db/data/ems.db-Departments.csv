@@ -1,0 +1,6 @@
+ID,DepartmentID,DepartmentName,Location,ManagerName
+11111111-1111-1111-1111-111111111111,D100,Human Resources,Hyderabad,Rajesh Kumar
+22222222-2222-2222-2222-222222222222,D200,Finance,Bengaluru,Sneha Reddy
+33333333-3333-3333-3333-333333333333,D300,Information Technology,Chennai,Rahul Sharma
+44444444-4444-4444-4444-444444444444,D400,Sales,Mumbai,Anita Verma
+55555555-5555-5555-5555-555555555555,D500,Marketing,Pune,Vikram Singh
