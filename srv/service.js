@@ -19,6 +19,12 @@ module.exports = cds.service.impl(async function () {//main function
         await validateLeaveRequest(req, Employees, LeaveRequests);
     });
 
+    this.before("READ", Employees, (req) => {
+        console.log("Employee READ request:");
+        console.log("User:", req.user.id);
+        //console.log("Roles:", [...req.user.roles]);
+    });
+    
     this.on('test', (req, res) => {
         console.log("I am a test action");
     });

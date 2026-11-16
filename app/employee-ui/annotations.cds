@@ -77,15 +77,15 @@ annotate service.Employees with @(
                 Value: Phone,
             },
             {
-                $Type: 'UI.DataField',
-                Label: 'JoiningDate',
-                Value: JoiningDate,
+                $Type                  : 'UI.DataField',
+                Label                  : 'JoiningDate',
+                Value                  : JoiningDate,
                 ![@Common.FieldControl]: JoiningDateFieldControl
             },
             {
-                $Type: 'UI.DataField',
-                Label: 'Salary',
-                Value: Salary,
+                $Type                  : 'UI.DataField',
+                Label                  : 'Salary',
+                Value                  : Salary,
                 ![@Common.FieldControl]: SalaryFieldControl
             },
             {
@@ -150,6 +150,18 @@ annotate service.Employees with @(
             Value      : Status,
             Criticality: StatusCriticality
         },
+        {
+            $Type                  : 'UI.DataField',
+            Label                  : 'JoiningDate',
+            Value                  : JoiningDate,
+            ![@Common.FieldControl]: JoiningDateFieldControl
+        },
+        {
+            $Type                  : 'UI.DataField',
+            Label                  : 'Salary',
+            Value                  : Salary,
+            ![@Common.FieldControl]: SalaryFieldControl
+        }
 
     ],
 
@@ -245,6 +257,6 @@ UI.LineItem: [
 ]);
 
 annotate service.Employees with {
-    Salary @Common.FieldControl: SalaryFieldControl;
+    Salary      @Common.FieldControl: SalaryFieldControl;
     JoiningDate @Common.FieldControl: JoiningDateFieldControl;
 };

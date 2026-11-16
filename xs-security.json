@@ -1,0 +1,31 @@
+{
+  "xsappname": "EmployeeManagement",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.User",
+      "description": "Employee Management User"
+    },
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Employee Management Admin"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "User",
+      "description": "Employee Management User",
+      "default-role-name": "User: Authorized to Read All Data",
+      "scope-references": [
+        "$XSAPPNAME.User"
+      ]
+    },
+    {
+      "name": "Admin",
+      "description": "Edit, delete, Approve, Reject Employee Management",
+      "scope-references": [
+        "$XSAPPNAME.Admin"
+      ]
+    }
+  ]
+}
