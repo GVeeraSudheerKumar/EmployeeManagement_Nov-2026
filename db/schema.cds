@@ -1,6 +1,6 @@
 namespace ems.db; //package declaration
 
-using {cuid, managed} from '@sap/cds/common';
+using {cuid, managed} from '@sap/cds/common';//import statement for standard ascepts
 
 using {ems.db as commons} from './commons'; //import statement
 
@@ -9,7 +9,7 @@ context EmployeeMaster { //Employee master data
 
         entity Employees : cuid, managed, commons.address {
 
-                EmployeeNo                      : commons.Guid;
+                EmployeeNo                      : commons.Guid;//String(20)
 
                 FirstName                       : String(30);
 
@@ -25,7 +25,7 @@ context EmployeeMaster { //Employee master data
 
                 Salary                          : Decimal(15, 2);
 
-                Status                          : String(20);
+                Status                          : String(20);                
 
                 // Many employees can belong to one department(many to one relation)
                 Department                      : Association to Departments;

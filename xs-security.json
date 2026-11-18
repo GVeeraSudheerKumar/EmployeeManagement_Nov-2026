@@ -1,6 +1,11 @@
 {
-  "xsappname": "EmployeeManagement",
+  "xsappname": "EmployeeManagement-174095d2trial-dev",
   "tenant-mode": "dedicated",
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "https://174095d2trial-dev-employeemanagement-ui.cfapps.us10-001.hana.ondemand.com/login/callback"
+    ]
+  },
   "scopes": [
     {
       "name": "$XSAPPNAME.User",

@@ -34,6 +34,23 @@ modules:
       buildpack: nodejs_buildpack
     requires:
       - name: EmployeeManagement-db
+  
+  - name:  EmployeeManagement-ui
+    type: nodejs
+    path: app
+    parameters:
+      buildpack: nodejs_buildpack
+    build-parameters:
+      builder: npm-ci
+    requires:
+      - name: srv-api
+        group: destinations
+        properties:
+          name: srv-api
+          strictSSL: true
+          forwardAuthToken: true
+          url: '~{srv-url}'
+      - name: EmployeeManagement-auth
 
 resources:
   - name: EmployeeManagement-auth
@@ -50,14 +67,14 @@ resources:
             - "binding-secret"
             - "x509"
         role-collections:
-          - name: 'User (EmployeeManagement ${org}-${space})'
-            description: 'generated'
+          - name: "User (EmployeeManagement ${org}-${space})"
+            description: "generated"
             role-template-references:
-              - '$XSAPPNAME.User'
-          - name: 'Admin (EmployeeManagement ${org}-${space})'
-            description: 'generated'
+              - "$XSAPPNAME.User"
+          - name: "Admin (EmployeeManagement ${org}-${space})"
+            description: "generated"
             role-template-references:
-              - '$XSAPPNAME.Admin'
+              - "$XSAPPNAME.Admin"
   - name: EmployeeManagement-db
     type: com.sap.xs.hdi-container
     parameters:

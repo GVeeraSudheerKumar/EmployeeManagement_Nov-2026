@@ -237,7 +237,7 @@ UI.LineItem: [
         $Type             : 'UI.DataFieldForAction',
         Action            : 'EmployeeService.ApproveLeave',
         Label             : 'Approve',
-        OperationAvailable: {$Path: 'CanApprove'}
+        //OperationAvailable: {$Path: 'CanApprove'}
     },
     // Reject Button
     {

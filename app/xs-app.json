@@ -1,0 +1,19 @@
+{
+  "welcomeFile": "/employee-ui/index.html",
+  "authenticationMethod": "route",
+  "sessionTimeout": 100,
+  "pluginMetadataEndpoint": "/metadata",
+  "routes": [
+    {
+      "source": "^/employee-ui/(.*)",
+      "target": "$1",
+      "localDir": "employee-ui/webapp/",
+      "authenticationType": "xsuaa"     
+    },
+	{
+        "source": "^/(.*)$",
+        "destination": "srv-api",
+        "authenticationType": "xsuaa"
+    }
+  ]
+}
